@@ -1,4 +1,3 @@
-
 # Hotel Microservice
 
 This is a Spring Boot microservice for managing hotels, rooms, and packages. It provides a RESTful API for performing CRUD operations on these resources.
@@ -47,23 +46,114 @@ This is a Spring Boot microservice for managing hotels, rooms, and packages. It 
 
 ## API Endpoints
 
-The following are the main API endpoints:
+### Hotel Controller (`/api/v1/hotel`)
 
-- `POST /api/v1/hotel/create`: Creates a new hotel.
-- `GET /api/v1/hotel/all`: Retrieves all hotels.
-- `GET /api/v1/hotel/{id}`: Retrieves a hotel by its ID.
-- `PATCH /api/v1/hotel/update/{id}`: Updates a hotel.
-- `DELETE /api/v1/hotel/delete/{id}`: Deletes a hotel.
-- `POST /api/v1/room/create`: Creates a new room.
-- `GET /api/v1/room/all`: Retrieves all rooms.
-- `PATCH /api/v1/room/update/{id}`: Updates a room.
-- `DELETE /api/v1/room/delete/{id}`: Deletes a room.
-- `PATCH /api/v1/room/update/availabilities/{id}`: Updates room availabilities.
-- `POST /api/v1/package/create`: Creates a new package.
-- `GET /api/v1/package/all`: Retrieves all packages.
-- `GET /api/v1/package/{id}`: Retrieves a package by its ID.
-- `PATCH /api/v1/package/update/{id}`: Updates a package.
-- `DELETE /api/v1/package/delete/{id}`: Deletes a package.
+*   **`GET /all`**
+    *   **Description:** Retrieves a list of all hotels.
+    *   **Request DTO:** None
+    *   **Response DTO:** `ResponseDto<List<HotelResponseDto>>`
+        *   `HotelResponseDto`: Contains `id`, `hotelName`, `facilities` (List of `Facilities` enum), `reviews` (List of `Reviews` model), `rooms` (List of `Room` model), `address`.
+
+*   **`GET /{id}`**
+    *   **Description:** Retrieves a single hotel by its ID.
+    *   **Request DTO:** None (ID is a path variable)
+    *   **Response DTO:** `ResponseDto<HotelResponseDto>`
+        *   `HotelResponseDto`: Contains `id`, `hotelName`, `facilities` (List of `Facilities` enum), `reviews` (List of `Reviews` model), `rooms` (List of `Room` model), `address`.
+
+*   **`POST /create`**
+    *   **Description:** Creates a new hotel.
+    *   **Request DTO:** `HotelRequestDto`
+        *   `HotelRequestDto`: Contains `hotelName` (String), `facilities` (List of `Facilities` enum), `hotelAddress` (String).
+    *   **Response DTO:** `ResponseDto<HotelResponseDto>`
+        *   `HotelResponseDto`: Contains `id`, `hotelName`, `facilities` (List of `Facilities` enum), `reviews` (List of `Reviews` model), `rooms` (List of `Room` model), `address`.
+
+*   **`PATCH /update/{id}`**
+    *   **Description:** Updates an existing hotel by its ID.
+    *   **Request DTO:** `HotelRequestDto`
+        *   `HotelRequestDto`: Contains `hotelName` (String), `facilities` (List of `Facilities` enum), `hotelAddress` (String).
+    *   **Response DTO:** `ResponseDto<HotelResponseDto>`
+        *   `HotelResponseDto`: Contains `id`, `hotelName`, `facilities` (List of `Facilities` enum), `reviews` (List of `Reviews` model), `rooms` (List of `Room` model), `address`.
+
+*   **`DELETE /delete/{id}`**
+    *   **Description:** Deletes a hotel by its ID.
+    *   **Request DTO:** None (ID is a path variable)
+    *   **Response DTO:** `ResponseDto<String>` (Returns a success message)
+
+### Package Controller (`/api/v1/package`)
+
+*   **`GET /all`**
+    *   **Description:** Retrieves a list of all packages.
+    *   **Request DTO:** None
+    *   **Response DTO:** `ResponseDto<List<PackageResponseDto>>`
+        *   `PackageResponseDto`: Contains `packageId`, `packageName`, `roomId`, `price` (BigDecimal), `tax` (BigDecimal), `occupancy` (Integer), `boardBasis` (BoardBasis enum).
+
+*   **`GET /{id}`**
+    *   **Description:** Retrieves a single package by its ID.
+    *   **Request DTO:** None (ID is a path variable)
+    *   **Response DTO:** `ResponseDto<PackageResponseDto>`
+        *   `PackageResponseDto`: Contains `packageId`, `packageName`, `roomId`, `price` (BigDecimal), `tax` (BigDecimal), `occupancy` (Integer), `boardBasis` (BoardBasis enum).
+
+*   **`POST /create`**
+    *   **Description:** Creates a new package.
+    *   **Request DTO:** `PackageRequestDto`
+        *   `PackageRequestDto`: Contains `packageName` (String), `roomId` (String), `price` (BigDecimal), `tax` (BigDecimal), `occupancy` (Integer), `boardBasis` (BoardBasis enum).
+    *   **Response DTO:** `ResponseDto<PackageResponseDto>`
+        *   `PackageResponseDto`: Contains `packageId`, `packageName`, `roomId`, `price` (BigDecimal), `tax` (BigDecimal), `occupancy` (Integer), `boardBasis` (BoardBasis enum).
+
+*   **`PATCH /update/{id}`**
+    *   **Description:** Updates an existing package by its ID.
+    *   **Request DTO:** `PackageUpdateRequestDto`
+        *   `PackageUpdateRequestDto`: Contains `packageName` (String), `price` (BigDecimal), `tax` (BigDecimal), `occupancy` (Integer), `boardBasis` (BoardBasis enum).
+    *   **Response DTO:** `ResponseDto<PackageResponseDto>`
+        *   `PackageResponseDto`: Contains `packageId`, `packageName`, `roomId`, `price` (BigDecimal), `tax` (BigDecimal), `occupancy` (Integer), `boardBasis` (BoardBasis enum).
+
+*   **`DELETE /delete/{id}`**
+    *   **Description:** Deletes a package by its ID.
+    *   **Request DTO:** None (ID is a path variable)
+    *   **Response DTO:** `ResponseDto<String>` (Returns a success message)
+
+### Room Controller (`/api/v1/room`)
+
+*   **`POST /create`**
+    *   **Description:** Creates a new room.
+    *   **Request DTO:** `RoomRequestDto`
+        *   `RoomRequestDto`: Contains `roomName` (String), `amenities` (List of `Amenities` enum), `hotelId` (String).
+    *   **Response DTO:** `ResponseDto<RoomResponseDto>`
+        *   `RoomResponseDto`: Contains `id`, `roomName`, `amenities` (List of `Amenities` enum), `hotelId`, `packageIds` (List of String).
+
+*   **`PATCH /update/{id}`**
+    *   **Description:** Updates an existing room by its ID.
+    *   **Request DTO:** `RoomUpdateRequestDto`
+        *   `RoomUpdateRequestDto`: Contains `roomName` (String), `amenities` (List of `Amenities` enum).
+    *   **Response DTO:** `ResponseDto<RoomResponseDto>`
+        *   `RoomResponseDto`: Contains `id`, `roomName`, `amenities` (List of `Amenities` enum), `hotelId`, `packageIds` (List of String).
+
+*   **`PATCH /update/availabilities/{id}`**
+    *   **Description:** Updates the availability of a room by its ID for specific dates.
+    *   **Request DTO:** `List<RoomAvailabilityRequestDto>`
+        *   `RoomAvailabilityRequestDto`: Contains `date` (LocalDate), `status` (RoomStatus enum).
+    *   **Response DTO:** `ResponseDto<String>` (Returns a success message)
+
+*   **`DELETE /delete/{id}`**
+    *   **Description:** Deletes a room by its ID.
+    *   **Request DTO:** None (ID is a path variable)
+    *   **Response DTO:** `ResponseDto<String>` (Returns a success message)
+
+*   **`GET /all`**
+    *   **Description:** Retrieves a list of all rooms.
+    *   **Request DTO:** None
+    *   **Response DTO:** `ResponseDto<List<RoomResponseDto>>`
+        *   `RoomResponseDto`: Contains `id`, `roomName`, `amenities` (List of `Amenities` enum), `hotelId`, `packageIds` (List of String).
+
+### Common DTOs
+
+*   **`ResponseDto<T>`**
+    *   **Description:** A generic response DTO used for all API responses, encapsulating the status code, status message, and the actual data.
+    *   **Fields:** `statusCode` (String), `statusMsg` (String), `data` (Generic type `T`).
+
+*   **`ErrorResponseDto`**
+    *   **Description:** DTO for conveying error information in a standardized format.
+    *   **Fields:** `apiPath` (String), `errorCode` (HttpStatus), `errorMessage` (String), `errorTime` (LocalDateTime).
 
 For more details on the API, you can access the Swagger UI at `http://localhost:8082/swagger-ui.html`.
 
