@@ -1,9 +1,11 @@
 spring:
   datasource:
-    url: jdbc:postgresql://hotelmsdb.postgres.database.azure.com:5432/postgres
-    username: "{cipher}fe19b893c0cebe27434c63477bfbeae81be508650dfccc1fbe4351d79c10ae36"
-    password: "{cipher}45e6cdb2f3a985e3bb034ebdee122a63164cc4be8e88db8f3d918a14fc065ba7"
+    url: jdbc:postgresql://pg-2bdddf3f-lasalshettiarachchi458-48df.i.aivencloud.com:14587/defaultdb?sslmode=require
+    username: "{cipher}b64dac94ca607f0474148c4c8e3cf5c3c89436146419101e9fa9c6124445dc79"
+    password: "{cipher}13c52a1ce7b6321a4082a3cbcdf6d4211cf09e099acaa823e2d1bf11aafca10cf160e1483cbe91ec315d916de9d892b1"
     driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 2
   jpa:
     hibernate:
       ddl-auto: update
@@ -26,6 +28,6 @@ eureka:
 
 info:
   app:
-    name: "hote"
+    name: "hotel"
     description: "hotel Service"
     version: 1.0.0

@@ -1,4 +1,11 @@
 package com.example.Reservation.dto;
 
-public class ReservationRequestDto {
+import java.time.LocalDate;
+
+public record ReservationRequestDto (
+     String customerId,
+     String packageId,
+     LocalDate checkInDate,
+     LocalDate checkOutDate
+){
 }

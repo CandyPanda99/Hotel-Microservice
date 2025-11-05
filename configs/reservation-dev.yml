@@ -1,9 +1,11 @@
 spring:
   datasource:
-    url: jdbc:postgresql://hotelmsdb.postgres.database.azure.com:5432/postgres
-    username: "{cipher}188be752197f82d11b4e0575a32de7d470e9c219277c3f7a0b58a524b765aed8"
-    password: "{cipher}2db4524e223b47335316f88594614de0ec1e772820d7516b1375b70c4e2178d1"
+    url: jdbc:postgresql://pg-2bdddf3f-lasalshettiarachchi458-48df.i.aivencloud.com:14587/defaultdb?sslmode=require
+    username: "{cipher}b64dac94ca607f0474148c4c8e3cf5c3c89436146419101e9fa9c6124445dc79"
+    password: "{cipher}13c52a1ce7b6321a4082a3cbcdf6d4211cf09e099acaa823e2d1bf11aafca10cf160e1483cbe91ec315d916de9d892b1"
     driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 2
   jpa:
     hibernate:
       ddl-auto: update
@@ -11,7 +13,7 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-        default_schema: reservation_db
+        default_schema: hotel_db
 server:
   port: 8081
 

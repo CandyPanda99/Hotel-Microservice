@@ -1,4 +1,4 @@
-package com.example.Hotel.exceptions;
+package com.example.Reservation.exceptions;
 
 public class ResourceAlreadyExistsException extends RuntimeException {
     public ResourceAlreadyExistsException(String resourceName,String fieldName, String fieldValue) {

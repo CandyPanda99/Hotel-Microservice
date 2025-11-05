@@ -1,6 +1,6 @@
-package com.example.Hotel.dto;
+package com.example.Reservation.dto;
 
-import com.example.Hotel.enums.BoardBasis;
+import com.example.Reservation.enums.BoardBasis;
 
 import java.math.BigDecimal;
 

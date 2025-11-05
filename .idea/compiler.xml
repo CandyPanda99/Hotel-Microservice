@@ -10,7 +10,7 @@
         <module name="eurekaserver" />
         <module name="configserver" />
       </profile>
-      <profile name="Annotation profile for Reservation" enabled="true">
+      <profile name="Annotation profile for User" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -19,8 +19,8 @@
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.6.3/mapstruct-processor-1.6.3.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.6.3/mapstruct-1.6.3.jar" />
         </processorPath>
-        <module name="hotel" />
         <module name="reservation" />
+        <module name="hotel" />
         <module name="Reservation" />
         <module name="user" />
       </profile>

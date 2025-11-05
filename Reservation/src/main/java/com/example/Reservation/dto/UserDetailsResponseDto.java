@@ -1,4 +1,4 @@
-package com.example.User.dto;
+package com.example.Reservation.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 

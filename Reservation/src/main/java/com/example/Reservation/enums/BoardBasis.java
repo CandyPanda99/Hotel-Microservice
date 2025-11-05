@@ -1,4 +1,4 @@
-package com.example.Hotel.enums;
+package com.example.Reservation.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

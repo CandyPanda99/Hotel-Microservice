@@ -1,6 +1,7 @@
-package com.example.Hotel.exceptions;
+package com.example.Reservation.exceptions;
 
-import com.example.Hotel.dto.ErrorResponseDto;
+
+import com.example.Reservation.dto.ErrorResponseDto;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;

@@ -1,4 +1,4 @@
-package com.example.Hotel.exceptions;
+package com.example.Reservation.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
