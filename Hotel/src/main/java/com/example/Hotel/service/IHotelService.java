@@ -7,9 +7,9 @@ import java.util.List;
 import java.util.Set;
 
 public interface IHotelService {
-    HotelResponseDto createHotel(HotelRequestDto hotelRequestDto);
-    HotelResponseDto getHotelById(String id);
     List<HotelResponseDto> getAllHotels();
+    HotelResponseDto getHotelById(String id);
+    HotelResponseDto createHotel(HotelRequestDto hotelRequestDto);
     HotelResponseDto updateHotel(String id, HotelRequestDto hotelRequestDto);
     void deleteHotel(String id);
 }
