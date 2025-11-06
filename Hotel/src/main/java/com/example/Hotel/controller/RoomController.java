@@ -67,6 +67,14 @@ public class RoomController {
                         .body(new ResponseDto<>(RoomConstants.STATUS_200, RoomConstants.MESSAGE_200, roomService.getAllRooms()));
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<ResponseDto<RoomResponseDto>> getRoomById(@PathVariable String id){
+        return
+                ResponseEntity
+                        .status(HttpStatus.OK)
+                        .body(new ResponseDto<>(RoomConstants.STATUS_200, RoomConstants.MESSAGE_200, roomService.getRoomById(id)));
+    }
+
 
 
 }

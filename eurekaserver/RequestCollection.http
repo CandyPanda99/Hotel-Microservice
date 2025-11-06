@@ -1,0 +1,3 @@
+### Get eureka server
+GET http://localhost:8070/eureka/apps
+

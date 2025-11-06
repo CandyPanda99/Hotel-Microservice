@@ -1,0 +1,32 @@
+### Get dev configs for user-service
+GET http://localhost:8071/user/dev
+
+### Get dev config for hotel-service
+GET http://localhost:8071/hotel/dev
+
+### Get config for reservation-service
+GET http://localhost:8071/reservation/dev
+
+### Encrypt a secret
+POST http://localhost:8071/encrypt
+Content-Type: text/plain
+
+password
+
+### Decrypt a secret
+POST http://localhost:8071/decrypt
+Content-Type: text/plain
+
+889af90eba7f55d1936b3aa35e32d3ea33587d47ce72d5c4a51f208dbd74c1bc
+
+### Refresh user-service actuator
+POST http://localhost:8080/actuator/refresh
+Content-Type: application/json
+
+### Refresh accounts-service actuator
+POST http://localhost:8081/actuator/refresh
+Content-Type: application/json
+
+### Refresh reservation-service actuator
+POST http://localhost:8082/actuator/refresh
+Content-Type: application/json

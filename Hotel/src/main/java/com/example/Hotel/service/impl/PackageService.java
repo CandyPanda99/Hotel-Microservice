@@ -5,7 +5,6 @@ import com.example.Hotel.dto.PackageResponseDto;
 import com.example.Hotel.dto.PackageUpdateRequestDto;
 import com.example.Hotel.dto.mapper.PackageDtoMapper;
 import com.example.Hotel.exceptions.ResourceNotFoundException;
-import com.example.Hotel.model.Hotel;
 import com.example.Hotel.model.Packages;
 import com.example.Hotel.model.Room;
 import com.example.Hotel.repository.HotelRepository;
@@ -24,8 +23,6 @@ public class PackageService implements IPackageService {
     @Autowired
     PackageRepository packageRepository;
 
-    @Autowired
-    HotelRepository hotelRepository;
 
     @Autowired
     RoomRepository roomRepository;

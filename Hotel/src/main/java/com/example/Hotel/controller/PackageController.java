@@ -6,6 +6,7 @@ import com.example.Hotel.dto.PackageResponseDto;
 import com.example.Hotel.dto.PackageUpdateRequestDto;
 import com.example.Hotel.dto.ResponseDto;
 import com.example.Hotel.service.IPackageService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -40,7 +41,7 @@ public class PackageController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<ResponseDto<PackageResponseDto>> createPackage(@RequestBody final PackageRequestDto packageRequestDto){
+    public ResponseEntity<ResponseDto<PackageResponseDto>> createPackage(@Valid  @RequestBody final PackageRequestDto packageRequestDto){
         PackageResponseDto packageResponseDto = packageService.createPackage(packageRequestDto);
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -48,7 +49,7 @@ public class PackageController {
     }
 
     @PatchMapping("/update/{id}")
-    public ResponseEntity<ResponseDto<PackageResponseDto>> updatePackage(@PathVariable String id, @RequestBody final PackageUpdateRequestDto packageUpdateRequestDto){
+    public ResponseEntity<ResponseDto<PackageResponseDto>> updatePackage(@PathVariable String id, @Valid @RequestBody final PackageUpdateRequestDto packageUpdateRequestDto){
         PackageResponseDto packageResponseDto = packageService.updatePackage(id, packageUpdateRequestDto);
         return ResponseEntity
                 .status(HttpStatus.OK)
