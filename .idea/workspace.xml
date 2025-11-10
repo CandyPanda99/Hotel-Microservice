@@ -5,29 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1bc4cc0-dc16-45b3-86dc-8a17531d6e83" name="Changes" comment="[HMS-006]: Eureka Server Implementation, writting the cron job to update room availabilities">
-      <change afterPath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/dto/RoomResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configserver/RequestCollection.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eurekaserver/RequestCollection.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/controller/PackageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/controller/PackageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/controller/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/controller/RoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/dto/PackageRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/dto/PackageRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/dto/PackageUpdateRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/dto/PackageUpdateRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/dto/RoomAvailabilityRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/dto/RoomAvailabilityRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/model/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/model/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/service/impl/PackageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/service/impl/PackageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/src/main/resources/application-dev.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/ReservationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/ReservationApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/dto/ReservationResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/dto/ReservationResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/dto/mapper/ReservationDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/dto/mapper/ReservationDtoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/model/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/model/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/service/client/HotelFeingClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/service/client/HotelFeingClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/service/impl/ReservationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/service/impl/ReservationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/resources/application-dev.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/config/hotel-dev.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/config/hotel.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/config/user-dev.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/config/user.yml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="feature/eureka-server-implementation" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -78,45 +56,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "HTTP Request.EurekaserverApplication | #1.executor": "Run",
-    "HTTP Request.RequestCollection | Decrypt a secret.executor": "Run",
-    "HTTP Request.RequestCollection | Encrypt a secret.executor": "Run",
-    "HTTP Request.RequestCollection | GET request to example server.executor": "Run",
-    "HTTP Request.RequestCollection | Get config for reservation-service.executor": "Run",
-    "HTTP Request.RequestCollection | Get config for user-service.executor": "Run",
-    "HTTP Request.RequestCollection | Get default configs for user-service.executor": "Run",
-    "HTTP Request.RequestCollection | Get dev config for hotel-service.executor": "Run",
-    "HTTP Request.RequestCollection | Get dev configs for user-service.executor": "Run",
-    "HTTP Request.RequestCollection | Get eureka server.executor": "Run",
-    "HTTP Request.RequestCollection | Refresh user-service actuator.executor": "Run",
-    "Maven.hotel [compile].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.ConfigserverApplication.executor": "Run",
-    "Spring Boot.EurekaserverApplication.executor": "Run",
-    "Spring Boot.HotelApplication.executor": "Run",
-    "Spring Boot.ReservationApplication.executor": "Debug",
-    "Spring Boot.UserApplication.executor": "Run",
-    "git-widget-placeholder": "feature/eureka-server-implementation",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/lasalhettiarachchi/IdeaProjects/Hotel Microservice/eurekaserver",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.EurekaserverApplication | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.RequestCollection | Decrypt a secret.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.RequestCollection | Encrypt a secret.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.RequestCollection | GET request to example server.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.RequestCollection | Get config for reservation-service.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.RequestCollection | Get config for user-service.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.RequestCollection | Get default configs for user-service.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.RequestCollection | Get dev config for hotel-service.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.RequestCollection | Get dev configs for user-service.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.RequestCollection | Get eureka server.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.RequestCollection | Refresh user-service actuator.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.hotel [compile].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ConfigserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.HotelApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ReservationApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.UserApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/api-gateway-implementation&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/lasalhettiarachchi/IdeaProjects/Hotel Microservice/eurekaserver&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -231,6 +209,8 @@
       <workItem from="1762317818325" duration="4315000" />
       <workItem from="1762345648175" duration="13771000" />
       <workItem from="1762448002860" duration="5884000" />
+      <workItem from="1762517846075" duration="5137000" />
+      <workItem from="1762757931293" duration="279000" />
     </task>
     <task id="LOCAL-00001" summary="[HMS-006]: Eureka Server initial setup">
       <option name="closed" value="true" />
