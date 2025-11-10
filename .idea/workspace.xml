@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1bc4cc0-dc16-45b3-86dc-8a17531d6e83" name="Changes" comment="[HMS-007]: Implementatiion of the spring cloud gateway server." />
+    <list default="true" id="d1bc4cc0-dc16-45b3-86dc-8a17531d6e83" name="Changes" comment="[HMS-007]: Changing to access lowercase service names">
+      <change afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/example/gatewayserver/filters/ResponseTimeFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/RequestCollection.http" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/RequestCollection.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/java/com/example/gatewayserver/GatewayserverApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/example/gatewayserver/GatewayserverApplication.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,6 +66,8 @@
     "HTTP Request.RequestCollection | Decrypt a secret.executor": "Run",
     "HTTP Request.RequestCollection | Encrypt a secret.executor": "Run",
     "HTTP Request.RequestCollection | GET request to example server.executor": "Run",
+    "HTTP Request.RequestCollection | Get all hotels via the gateway server(CAPS).executor": "Run",
+    "HTTP Request.RequestCollection | Get all hotels via the gateway server(SIMPLE).executor": "Run",
     "HTTP Request.RequestCollection | Get all hotels via the gateway server.executor": "Run",
     "HTTP Request.RequestCollection | Get config for reservation-service.executor": "Run",
     "HTTP Request.RequestCollection | Get config for user-service.executor": "Run",
@@ -138,13 +145,13 @@
     <configuration name="RequestCollection | Get all hotels via the gateway server" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gatewayserver/RequestCollection.http" executionIdentifier="Get all hotels via the gateway server" index="2" runType="Run single request">
       <method v="2" />
     </configuration>
+    <configuration name="RequestCollection | Get all hotels via the gateway server(CAPS)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gatewayserver/RequestCollection.http" executionIdentifier="Get all hotels via the gateway server(CAPS)" index="2" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="RequestCollection | Get all hotels via the gateway server(SIMPLE)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gatewayserver/RequestCollection.http" executionIdentifier="Get all hotels via the gateway server(SIMPLE)" index="3" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="RequestCollection | Get eureka server" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/eurekaserver/RequestCollection.http" executionIdentifier="Get eureka server" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="RequestCollection | Refresh user-service actuator" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/configserver/RequestCollection.http" executionIdentifier="Refresh user-service actuator" index="6" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="RequestCollection | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gatewayserver/RequestCollection.http" executionIdentifier="#1" runType="Run single request">
@@ -195,11 +202,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.RequestCollection | Get all hotels via the gateway server(SIMPLE)" />
         <item itemvalue="HTTP Request.RequestCollection | Get all hotels via the gateway server" />
+        <item itemvalue="HTTP Request.RequestCollection | Get all hotels via the gateway server(SIMPLE)" />
+        <item itemvalue="HTTP Request.RequestCollection | Get all hotels via the gateway server(CAPS)" />
         <item itemvalue="HTTP Request.RequestCollection | #1" />
         <item itemvalue="HTTP Request.RequestCollection | Get eureka server" />
-        <item itemvalue="HTTP Request.RequestCollection | Refresh user-service actuator" />
       </list>
     </recent_temporary>
   </component>
@@ -232,7 +239,7 @@
       <workItem from="1762517846075" duration="5137000" />
       <workItem from="1762757931293" duration="279000" />
       <workItem from="1762758223688" duration="4485000" />
-      <workItem from="1762767479581" duration="4230000" />
+      <workItem from="1762767479581" duration="6578000" />
     </task>
     <task id="LOCAL-00001" summary="[HMS-006]: Eureka Server initial setup">
       <option name="closed" value="true" />
@@ -274,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762779820196</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="[HMS-007]: Changing to access lowercase service names">
+      <option name="closed" value="true" />
+      <created>1762780018846</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1762780018846</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,7 +301,8 @@
     <MESSAGE value="[HMS-006]: Eureka Server Implementation, writting the cron job to update room availabilities" />
     <MESSAGE value="[HMS-007]: Project setup of the gatewayserver" />
     <MESSAGE value="[HMS-007]: Implementatiion of the spring cloud gateway server." />
-    <option name="LAST_COMMIT_MESSAGE" value="[HMS-007]: Implementatiion of the spring cloud gateway server." />
+    <MESSAGE value="[HMS-007]: Changing to access lowercase service names" />
+    <option name="LAST_COMMIT_MESSAGE" value="[HMS-007]: Changing to access lowercase service names" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
