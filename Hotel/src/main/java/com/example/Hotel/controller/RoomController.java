@@ -1,15 +1,15 @@
 package com.example.Hotel.controller;
 
-import com.example.Hotel.constants.HotelConstants;
 import com.example.Hotel.constants.RoomConstants;
 import com.example.Hotel.dto.*;
 import com.example.Hotel.service.IRoomService;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,11 +20,14 @@ import java.util.List;
 @Validated
 public class RoomController {
 
+    private static final Logger logger = LoggerFactory.getLogger(RoomController.class);
+
     @Autowired
     IRoomService roomService;
 
     @PostMapping("/create")
-    public ResponseEntity<ResponseDto<RoomResponseDto>> createRoom(@Valid @RequestBody final RoomRequestDto roomRequestDto){
+    public ResponseEntity<ResponseDto<RoomResponseDto>> createRoom(@RequestHeader("correlation-id") String correlationId, @Valid @RequestBody final RoomRequestDto roomRequestDto){
+        logger.debug("correlation-id found in RoomController: {}", correlationId);
         RoomResponseDto roomResponseDto = roomService.createRoom(roomRequestDto);
 
         return ResponseEntity
@@ -33,7 +36,8 @@ public class RoomController {
     }
 
     @PatchMapping("/update/{id}")
-    public ResponseEntity<ResponseDto<RoomResponseDto>> updateRoom(@PathVariable String id, @Valid @RequestBody final RoomUpdateRequestDto roomUpdateRequestDto){
+    public ResponseEntity<ResponseDto<RoomResponseDto>> updateRoom(@RequestHeader("correlation-id") String correlationId, @PathVariable String id, @Valid @RequestBody final RoomUpdateRequestDto roomUpdateRequestDto){
+        logger.debug("correlation-id found in RoomController: {}", correlationId);
         RoomResponseDto roomResponseDto = roomService.updateRoom(id, roomUpdateRequestDto);
 
         return ResponseEntity
@@ -42,7 +46,8 @@ public class RoomController {
     }
 
     @PatchMapping("/update/availabilities/{id}")
-    public ResponseEntity<ResponseDto<String>> updateRoomAvailabilities(@RequestParam String id, @RequestBody List<RoomAvailabilityRequestDto> requestDtos){
+    public ResponseEntity<ResponseDto<String>> updateRoomAvailabilities(@RequestHeader("correlation-id") String correlationId, @RequestParam String id, @RequestBody List<RoomAvailabilityRequestDto> requestDtos){
+        logger.debug("correlation-id found in RoomController: {}", correlationId);
         roomService.updateRoomAvailabilities(id, requestDtos);
 
         return ResponseEntity
@@ -51,7 +56,8 @@ public class RoomController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<ResponseDto<String>> deleteRoom(@PathVariable String id){
+    public ResponseEntity<ResponseDto<String>> deleteRoom(@RequestHeader("correlation-id") String correlationId, @PathVariable String id){
+        logger.debug("correlation-id found in RoomController: {}", correlationId);
         roomService.deleteRoom(id);
 
         return ResponseEntity
@@ -60,7 +66,8 @@ public class RoomController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<ResponseDto<List<RoomResponseDto>>> getRooms(){
+    public ResponseEntity<ResponseDto<List<RoomResponseDto>>> getRooms(@RequestHeader("correlation-id") String correlationId){
+        logger.debug("correlation-id found in RoomController: {}", correlationId);
         return
                 ResponseEntity
                         .status(HttpStatus.OK)
@@ -68,7 +75,8 @@ public class RoomController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ResponseDto<RoomResponseDto>> getRoomById(@PathVariable String id){
+    public ResponseEntity<ResponseDto<RoomResponseDto>> getRoomById(@RequestHeader("correlation-id") String correlationId, @PathVariable String id){
+        logger.debug("correlation-id found in RoomController: {}", correlationId);
         return
                 ResponseEntity
                         .status(HttpStatus.OK)

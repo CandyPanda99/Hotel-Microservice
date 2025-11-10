@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1bc4cc0-dc16-45b3-86dc-8a17531d6e83" name="Changes" comment="[HMS-007]: Changing to access lowercase service names">
-      <change afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/example/gatewayserver/filters/ResponseTimeFilter.java" afterDir="false" />
+    <list default="true" id="d1bc4cc0-dc16-45b3-86dc-8a17531d6e83" name="Changes" comment="[HMS-007]: adding custom routes and response filter">
+      <change afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/example/gatewayserver/filters/FilterUtility.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/example/gatewayserver/filters/RequestTraceFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/example/gatewayserver/filters/ResponseTraceFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatewayserver/RequestCollection.http" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/RequestCollection.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/java/com/example/gatewayserver/GatewayserverApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/example/gatewayserver/GatewayserverApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/controller/HotelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/controller/HotelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/controller/PackageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/controller/PackageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/controller/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/controller/RoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/controller/ReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/controller/ReservationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/example/User/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/java/com/example/User/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/example/User/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/java/com/example/User/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/java/com/example/gatewayserver/filters/ResponseTimeFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/example/gatewayserver/filters/ResponseTimeFilter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +246,7 @@
       <workItem from="1762517846075" duration="5137000" />
       <workItem from="1762757931293" duration="279000" />
       <workItem from="1762758223688" duration="4485000" />
-      <workItem from="1762767479581" duration="6578000" />
+      <workItem from="1762767479581" duration="8642000" />
     </task>
     <task id="LOCAL-00001" summary="[HMS-006]: Eureka Server initial setup">
       <option name="closed" value="true" />
@@ -289,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762780018846</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="[HMS-007]: adding custom routes and response filter">
+      <option name="closed" value="true" />
+      <created>1762787750976</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1762787750976</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +317,8 @@
     <MESSAGE value="[HMS-007]: Project setup of the gatewayserver" />
     <MESSAGE value="[HMS-007]: Implementatiion of the spring cloud gateway server." />
     <MESSAGE value="[HMS-007]: Changing to access lowercase service names" />
-    <option name="LAST_COMMIT_MESSAGE" value="[HMS-007]: Changing to access lowercase service names" />
+    <MESSAGE value="[HMS-007]: adding custom routes and response filter" />
+    <option name="LAST_COMMIT_MESSAGE" value="[HMS-007]: adding custom routes and response filter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -314,12 +330,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/controller/RoomController.java</url>
-          <line>27</line>
+          <line>30</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/controller/RoomController.java</url>
-          <line>45</line>
+          <line>50</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

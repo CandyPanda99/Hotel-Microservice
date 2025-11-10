@@ -6,6 +6,8 @@ import com.example.Reservation.dto.ReservationResponseDto;
 import com.example.Reservation.dto.ResponseDto;
 import com.example.Reservation.service.IReservationService;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -20,11 +22,14 @@ import java.util.List;
 @Validated
 public class ReservationController {
 
+    private static final Logger logger = LoggerFactory.getLogger(ReservationController.class);
+
     @Autowired
     IReservationService reservationService;
 
     @GetMapping("/all")
-    public ResponseEntity<ResponseDto<List<ReservationResponseDto>>> getAllReservations() {
+    public ResponseEntity<ResponseDto<List<ReservationResponseDto>>> getAllReservations(@RequestHeader("correlation-id") String correlationId) {
+        logger.debug("correlation-id found in ReservationController: {}", correlationId);
         return
                 ResponseEntity
                         .status(HttpStatus.OK)
@@ -32,7 +37,8 @@ public class ReservationController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ResponseDto<ReservationResponseDto>> getReservationById(@PathVariable String id) {
+    public ResponseEntity<ResponseDto<ReservationResponseDto>> getReservationById(@RequestHeader("correlation-id") String correlationId, @PathVariable String id) {
+        logger.debug("correlation-id found in ReservationController: {}", correlationId);
         return
                 ResponseEntity
                         .status(HttpStatus.OK)
@@ -40,7 +46,8 @@ public class ReservationController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<ResponseDto<ReservationResponseDto>> createReservation(@Valid  @RequestBody final ReservationRequestDto reservationRequestDto) {
+    public ResponseEntity<ResponseDto<ReservationResponseDto>> createReservation(@RequestHeader("correlation-id") String correlationId, @Valid  @RequestBody final ReservationRequestDto reservationRequestDto) {
+        logger.debug("correlation-id found in ReservationController: {}", correlationId);
         ReservationResponseDto reservationResponseDto = reservationService.createReservation(reservationRequestDto);
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -48,7 +55,8 @@ public class ReservationController {
     }
 
     @PatchMapping("/update/{id}")
-    public ResponseEntity<ResponseDto<ReservationResponseDto>> updateReservation(@PathVariable String id, @Valid @RequestBody final ReservationRequestDto reservationRequestDto) {
+    public ResponseEntity<ResponseDto<ReservationResponseDto>> updateReservation(@RequestHeader("correlation-id") String correlationId, @PathVariable String id, @Valid @RequestBody final ReservationRequestDto reservationRequestDto) {
+        logger.debug("correlation-id found in ReservationController: {}", correlationId);
         ReservationResponseDto reservationResponseDto = reservationService.updateReservation(id, reservationRequestDto);
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -56,7 +64,8 @@ public class ReservationController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<ResponseDto<String>> deleteReservation(@PathVariable String id) {
+    public ResponseEntity<ResponseDto<String>> deleteReservation(@RequestHeader("correlation-id") String correlationId, @PathVariable String id) {
+        logger.debug("correlation-id found in ReservationController: {}", correlationId);
         reservationService.deleteReservation(id);
         return
                 ResponseEntity

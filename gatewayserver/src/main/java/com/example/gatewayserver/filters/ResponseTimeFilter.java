@@ -1,13 +1,14 @@
 package com.example.gatewayserver.filters;
 
 import org.springframework.cloud.gateway.filter.GlobalFilter;
-import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
+@Order(2)
 @Component
-public class ResponseTimeFilter implements GlobalFilter, Ordered {
+public class ResponseTimeFilter implements GlobalFilter {
 
     private static final String RESPONSE_TIME_HEADER = "X-Response-Time";
     private static final String START_TIME_ATTRIBUTE = "startTime";
@@ -25,10 +26,5 @@ public class ResponseTimeFilter implements GlobalFilter, Ordered {
                     }
                 })
         );
-    }
-
-    @Override
-    public int getOrder() {
-        return Ordered.LOWEST_PRECEDENCE;
     }
 }

@@ -7,6 +7,8 @@ import com.example.Hotel.dto.PackageUpdateRequestDto;
 import com.example.Hotel.dto.ResponseDto;
 import com.example.Hotel.service.IPackageService;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -21,11 +23,14 @@ import java.util.List;
 @Validated
 public class PackageController {
 
+    private static final Logger logger = LoggerFactory.getLogger(PackageController.class);
+
     @Autowired
     IPackageService packageService;
 
     @GetMapping("/all")
-    public ResponseEntity<ResponseDto<List<PackageResponseDto>>> getPackages(){
+    public ResponseEntity<ResponseDto<List<PackageResponseDto>>> getPackages(@RequestHeader("correlation-id") String correlationId){
+        logger.debug("correlation-id found in PackageController: {}", correlationId);
         return
                 ResponseEntity
                         .status(HttpStatus.OK)
@@ -33,7 +38,8 @@ public class PackageController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ResponseDto<PackageResponseDto>> getPackageById(@PathVariable String id){
+    public ResponseEntity<ResponseDto<PackageResponseDto>> getPackageById(@RequestHeader("correlation-id") String correlationId, @PathVariable String id){
+        logger.debug("correlation-id found in PackageController: {}", correlationId);
         return
                 ResponseEntity
                         .status(HttpStatus.OK)
@@ -41,7 +47,8 @@ public class PackageController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<ResponseDto<PackageResponseDto>> createPackage(@Valid  @RequestBody final PackageRequestDto packageRequestDto){
+    public ResponseEntity<ResponseDto<PackageResponseDto>> createPackage(@RequestHeader("correlation-id") String correlationId, @Valid  @RequestBody final PackageRequestDto packageRequestDto){
+        logger.debug("correlation-id found in PackageController: {}", correlationId);
         PackageResponseDto packageResponseDto = packageService.createPackage(packageRequestDto);
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -49,7 +56,8 @@ public class PackageController {
     }
 
     @PatchMapping("/update/{id}")
-    public ResponseEntity<ResponseDto<PackageResponseDto>> updatePackage(@PathVariable String id, @Valid @RequestBody final PackageUpdateRequestDto packageUpdateRequestDto){
+    public ResponseEntity<ResponseDto<PackageResponseDto>> updatePackage(@RequestHeader("correlation-id") String correlationId, @PathVariable String id, @Valid @RequestBody final PackageUpdateRequestDto packageUpdateRequestDto){
+        logger.debug("correlation-id found in PackageController: {}", correlationId);
         PackageResponseDto packageResponseDto = packageService.updatePackage(id, packageUpdateRequestDto);
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -57,7 +65,8 @@ public class PackageController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<ResponseDto<String>> deletePackage(@PathVariable String id){
+    public ResponseEntity<ResponseDto<String>> deletePackage(@RequestHeader("correlation-id") String correlationId, @PathVariable String id){
+        logger.debug("correlation-id found in PackageController: {}", correlationId);
         packageService.deletePackage(id);
         return
                 ResponseEntity

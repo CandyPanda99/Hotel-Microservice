@@ -6,6 +6,8 @@ import com.example.Hotel.dto.HotelResponseDto;
 import com.example.Hotel.dto.ResponseDto;
 import com.example.Hotel.service.IHotelService;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -19,11 +21,14 @@ import java.util.List;
 @RequestMapping(value = "/api/v1/hotel", produces = {MediaType.APPLICATION_JSON_VALUE})
 @Validated
 public class HotelController {
+
+    private static final Logger logger = LoggerFactory.getLogger(HotelController.class);
     @Autowired
     IHotelService hotelService;
 
     @GetMapping("/all")
-    public ResponseEntity<ResponseDto<List<HotelResponseDto>>> getHotels(){
+    public ResponseEntity<ResponseDto<List<HotelResponseDto>>> getHotels(@RequestHeader("correlation-id") String correlationId){
+        logger.debug("correlation-id found in HotelController: {}", correlationId);
         return
                 ResponseEntity
                         .status(HttpStatus.OK)
@@ -31,7 +36,8 @@ public class HotelController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ResponseDto<HotelResponseDto>> getHotelById(@PathVariable String id){
+    public ResponseEntity<ResponseDto<HotelResponseDto>> getHotelById(@RequestHeader("correlation-id") String correlationId, @PathVariable String id){
+        logger.debug("correlation-id found in HotelController: {}", correlationId);
         return
                 ResponseEntity
                         .status(HttpStatus.OK)
@@ -39,7 +45,8 @@ public class HotelController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<ResponseDto<HotelResponseDto>> createHotel(@Valid @RequestBody final HotelRequestDto hotelDetailsRequestDto){
+    public ResponseEntity<ResponseDto<HotelResponseDto>> createHotel(@RequestHeader("correlation-id") String correlationId, @Valid @RequestBody final HotelRequestDto hotelDetailsRequestDto){
+        logger.debug("correlation-id found in HotelController: {}", correlationId);
         HotelResponseDto hotelResponseDto = hotelService.createHotel(hotelDetailsRequestDto);
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -47,7 +54,8 @@ public class HotelController {
     }
 
     @PatchMapping("/update/{id}")
-    public ResponseEntity<ResponseDto<HotelResponseDto>> updateHotel(@PathVariable String id, @Valid @RequestBody final HotelRequestDto hotelDetailsRequestDto){
+    public ResponseEntity<ResponseDto<HotelResponseDto>> updateHotel(@RequestHeader("correlation-id") String correlationId, @PathVariable String id, @Valid @RequestBody final HotelRequestDto hotelDetailsRequestDto){
+        logger.debug("correlation-id found in HotelController: {}", correlationId);
         HotelResponseDto hotelResponseDto = hotelService.updateHotel(id, hotelDetailsRequestDto);
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -55,7 +63,8 @@ public class HotelController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<ResponseDto<String>> deleteHotel(@PathVariable String id){
+    public ResponseEntity<ResponseDto<String>> deleteHotel(@RequestHeader("correlation-id") String correlationId, @PathVariable String id){
+        logger.debug("correlation-id found in HotelController: {}", correlationId);
         hotelService.deleteHotel(id);
         return
                 ResponseEntity

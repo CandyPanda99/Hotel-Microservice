@@ -7,6 +7,8 @@ import com.example.User.dto.UserDetailsResponseDto;
 import com.example.User.service.IUserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -22,6 +24,8 @@ import java.util.List;
 @Tag(name = "User", description = "Endpoints to manage auth")
 public class UserController {
 
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
+
     @Autowired
     IUserService userService;
 
@@ -30,7 +34,8 @@ public class UserController {
             description = "Get all users"
     )
     @GetMapping("/all")
-    public ResponseEntity<ResponseDto<List<UserDetailsResponseDto>>> getUsers(){
+    public ResponseEntity<ResponseDto<List<UserDetailsResponseDto>>> getUsers(@RequestHeader("correlation-id") String correlationId){
+        logger.debug("correlation-id found in UserController: {}", correlationId);
         return
                 ResponseEntity
                         .status(HttpStatus.OK)
@@ -42,7 +47,8 @@ public class UserController {
             description = "Get user by id"
     )
     @GetMapping("/{id}")
-    public ResponseEntity<ResponseDto<UserDetailsResponseDto>> getUserById(@PathVariable String id){
+    public ResponseEntity<ResponseDto<UserDetailsResponseDto>> getUserById(@RequestHeader("correlation-id") String correlationId, @PathVariable String id){
+        logger.debug("correlation-id found in UserController: {}", correlationId);
         return
                 ResponseEntity
                         .status(HttpStatus.OK)
@@ -54,7 +60,8 @@ public class UserController {
             description = "Delete user by id"
     )
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<ResponseDto<String>> deleteUser(@PathVariable String id){
+    public ResponseEntity<ResponseDto<String>> deleteUser(@RequestHeader("correlation-id") String correlationId, @PathVariable String id){
+        logger.debug("correlation-id found in UserController: {}", correlationId);
         userService.deleteUser(id);
         return
                 ResponseEntity
@@ -67,7 +74,8 @@ public class UserController {
             description = "Update user by id"
     )
     @PatchMapping("/update/{id}")
-    public ResponseEntity<ResponseDto<UserDetailsResponseDto>> updateUser(@PathVariable String id, @RequestBody UserDetailsRequestDto userDetailsRequestDto){
+    public ResponseEntity<ResponseDto<UserDetailsResponseDto>> updateUser(@RequestHeader("correlation-id") String correlationId, @PathVariable String id, @RequestBody UserDetailsRequestDto userDetailsRequestDto){
+        logger.debug("correlation-id found in UserController: {}", correlationId);
         return
                 ResponseEntity
                         .status(HttpStatus.OK)
