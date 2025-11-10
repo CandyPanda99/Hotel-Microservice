@@ -2,4 +2,4 @@
 GET http://127.0.0.1:8072/actuator/gateway/routes
 
 ### Get all hotels via the gateway server
-GET http://127.0.0.1:8072/HOTEL/api/v1/hotel/all
+GET http://127.0.0.1:8072/hotel/api/v1/hotel/all

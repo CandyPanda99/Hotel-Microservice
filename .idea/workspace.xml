@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1bc4cc0-dc16-45b3-86dc-8a17531d6e83" name="Changes" comment="[HMS-007]: Project setup of the gatewayserver">
-      <change afterPath="$PROJECT_DIR$/configs/gatewayserver.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eurekaserver/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gatewayserver/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eurekaserver/src/test/java/com/example/eurekaserver/EurekaserverApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatewayserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatewayserver/src/test/java/com/example/gatewayserver/GatewayserverApplicationTests.java" beforeDir="false" />
-    </list>
+    <list default="true" id="d1bc4cc0-dc16-45b3-86dc-8a17531d6e83" name="Changes" comment="[HMS-007]: Implementatiion of the spring cloud gateway server." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,9 +57,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "HTTP Request.EurekaserverApplication | #1.executor": "Run",
+    "HTTP Request.RequestCollection | #1.executor": "Run",
     "HTTP Request.RequestCollection | Decrypt a secret.executor": "Run",
     "HTTP Request.RequestCollection | Encrypt a secret.executor": "Run",
     "HTTP Request.RequestCollection | GET request to example server.executor": "Run",
+    "HTTP Request.RequestCollection | Get all hotels via the gateway server.executor": "Run",
     "HTTP Request.RequestCollection | Get config for reservation-service.executor": "Run",
     "HTTP Request.RequestCollection | Get config for user-service.executor": "Run",
     "HTTP Request.RequestCollection | Get default configs for user-service.executor": "Run",
@@ -145,10 +135,10 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.GatewayserverApplication">
-    <configuration name="RequestCollection | Decrypt a secret" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/configserver/RequestCollection.http" executionIdentifier="Decrypt a secret" index="5" runType="Run single request">
+    <configuration name="RequestCollection | Get all hotels via the gateway server" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gatewayserver/RequestCollection.http" executionIdentifier="Get all hotels via the gateway server" index="2" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="RequestCollection | Get all hotels via the gateway server" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gatewayserver/RequestCollection.http" executionIdentifier="Get all hotels via the gateway server" index="2" runType="Run single request">
+    <configuration name="RequestCollection | Get all hotels via the gateway server(SIMPLE)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gatewayserver/RequestCollection.http" executionIdentifier="Get all hotels via the gateway server(SIMPLE)" index="3" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="RequestCollection | Get eureka server" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/eurekaserver/RequestCollection.http" executionIdentifier="Get eureka server" runType="Run single request">
@@ -205,11 +195,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.RequestCollection | Get all hotels via the gateway server(SIMPLE)" />
         <item itemvalue="HTTP Request.RequestCollection | Get all hotels via the gateway server" />
         <item itemvalue="HTTP Request.RequestCollection | #1" />
         <item itemvalue="HTTP Request.RequestCollection | Get eureka server" />
         <item itemvalue="HTTP Request.RequestCollection | Refresh user-service actuator" />
-        <item itemvalue="HTTP Request.RequestCollection | Decrypt a secret" />
       </list>
     </recent_temporary>
   </component>
@@ -242,7 +232,7 @@
       <workItem from="1762517846075" duration="5137000" />
       <workItem from="1762757931293" duration="279000" />
       <workItem from="1762758223688" duration="4485000" />
-      <workItem from="1762767479581" duration="3852000" />
+      <workItem from="1762767479581" duration="4230000" />
     </task>
     <task id="LOCAL-00001" summary="[HMS-006]: Eureka Server initial setup">
       <option name="closed" value="true" />
@@ -276,7 +266,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762758535250</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="[HMS-007]: Implementatiion of the spring cloud gateway server.">
+      <option name="closed" value="true" />
+      <created>1762779820196</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1762779820196</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +285,8 @@
     <MESSAGE value="[HMS-006]: Eureka Server initial setup" />
     <MESSAGE value="[HMS-006]: Eureka Server Implementation, writting the cron job to update room availabilities" />
     <MESSAGE value="[HMS-007]: Project setup of the gatewayserver" />
-    <option name="LAST_COMMIT_MESSAGE" value="[HMS-007]: Project setup of the gatewayserver" />
+    <MESSAGE value="[HMS-007]: Implementatiion of the spring cloud gateway server." />
+    <option name="LAST_COMMIT_MESSAGE" value="[HMS-007]: Implementatiion of the spring cloud gateway server." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
