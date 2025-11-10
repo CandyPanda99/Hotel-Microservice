@@ -48,7 +48,7 @@ public class ReservationController {
     @PostMapping("/create")
     public ResponseEntity<ResponseDto<ReservationResponseDto>> createReservation(@RequestHeader("correlation-id") String correlationId, @Valid  @RequestBody final ReservationRequestDto reservationRequestDto) {
         logger.debug("correlation-id found in ReservationController: {}", correlationId);
-        ReservationResponseDto reservationResponseDto = reservationService.createReservation(reservationRequestDto);
+        ReservationResponseDto reservationResponseDto = reservationService.createReservation(correlationId, reservationRequestDto);
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(new ResponseDto<>(ReservationConstants.STATUS_201, ReservationConstants.MESSAGE_201, reservationResponseDto));
@@ -57,7 +57,7 @@ public class ReservationController {
     @PatchMapping("/update/{id}")
     public ResponseEntity<ResponseDto<ReservationResponseDto>> updateReservation(@RequestHeader("correlation-id") String correlationId, @PathVariable String id, @Valid @RequestBody final ReservationRequestDto reservationRequestDto) {
         logger.debug("correlation-id found in ReservationController: {}", correlationId);
-        ReservationResponseDto reservationResponseDto = reservationService.updateReservation(id, reservationRequestDto);
+        ReservationResponseDto reservationResponseDto = reservationService.updateReservation(correlationId, id, reservationRequestDto);
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(new ResponseDto<>(ReservationConstants.STATUS_200, ReservationConstants.MESSAGE_200, reservationResponseDto));

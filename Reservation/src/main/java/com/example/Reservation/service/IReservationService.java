@@ -6,10 +6,10 @@ import com.example.Reservation.dto.ReservationResponseDto;
 import java.util.List;
 
 public interface IReservationService {
-    ReservationResponseDto createReservation(ReservationRequestDto reservationRequestDto);
+    ReservationResponseDto createReservation(String correlationId, ReservationRequestDto reservationRequestDto);
     ReservationResponseDto getReservationById(String reservationId);
     List<ReservationResponseDto> getAllReservations();
-    ReservationResponseDto updateReservation(String reservationId, ReservationRequestDto reservationRequestDto);
+    ReservationResponseDto updateReservation(String correlationId, String reservationId, ReservationRequestDto reservationRequestDto);
     void deleteReservation(String reservationId);
 
 }

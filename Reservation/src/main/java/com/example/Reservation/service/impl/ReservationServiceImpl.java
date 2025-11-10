@@ -23,10 +23,10 @@ public class ReservationServiceImpl implements IReservationService {
 
 
     @Override
-    public ReservationResponseDto createReservation(ReservationRequestDto reservationRequestDto) {
-        UserDetailsResponseDto user = userFeingClient.getUserById(reservationRequestDto.customerId()).getBody().data();
-        PackageResponseDto hotelPackage = hotelFeingClient.getPackageById(reservationRequestDto.packageId()).getBody().data();
-        RoomResponseDto room = hotelFeingClient.getRoomById(hotelPackage.roomId()).getBody().data();
+    public ReservationResponseDto createReservation(String correlationId, ReservationRequestDto reservationRequestDto) {
+        UserDetailsResponseDto user = userFeingClient.getUserById(correlationId, reservationRequestDto.customerId()).getBody().data();
+        PackageResponseDto hotelPackage = hotelFeingClient.getPackageById(correlationId, reservationRequestDto.packageId()).getBody().data();
+        RoomResponseDto room = hotelFeingClient.getRoomById(correlationId, hotelPackage.roomId()).getBody().data();
 
         Reservation reservation = ReservationDtoMapper.INSTANCE.reservationRequestDtoToReservation(reservationRequestDto);
         reservation.setCustomerName(user.name());
@@ -59,13 +59,13 @@ public class ReservationServiceImpl implements IReservationService {
     }
 
     @Override
-    public ReservationResponseDto updateReservation(String reservationId, ReservationRequestDto reservationRequestDto) {
+    public ReservationResponseDto updateReservation(String correlationId, String reservationId, ReservationRequestDto reservationRequestDto) {
         Reservation reservation = reservationRepository.findById(reservationId)
                 .orElseThrow(() -> new ResourceNotFoundException("Reservation","id", reservationId));
 
-        UserDetailsResponseDto user = userFeingClient.getUserById(reservationRequestDto.customerId()).getBody().data();
-        PackageResponseDto hotelPackage = hotelFeingClient.getPackageById(reservationRequestDto.packageId()).getBody().data();
-        RoomResponseDto room = hotelFeingClient.getRoomById(hotelPackage.roomId()).getBody().data();
+        UserDetailsResponseDto user = userFeingClient.getUserById(correlationId, reservationRequestDto.customerId()).getBody().data();
+        PackageResponseDto hotelPackage = hotelFeingClient.getPackageById(correlationId, reservationRequestDto.packageId()).getBody().data();
+        RoomResponseDto room = hotelFeingClient.getRoomById(correlationId, hotelPackage.roomId()).getBody().data();
 
         reservation.setCustomerId(reservationRequestDto.customerId());
         reservation.setCheckinDate(reservationRequestDto.checkInDate());

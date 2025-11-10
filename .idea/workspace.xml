@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1bc4cc0-dc16-45b3-86dc-8a17531d6e83" name="Changes" comment="[HMS-007]: adding custom routes and response filter">
-      <change afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/example/gatewayserver/filters/FilterUtility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/example/gatewayserver/filters/RequestTraceFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/example/gatewayserver/filters/ResponseTraceFilter.java" afterDir="false" />
+    <list default="true" id="d1bc4cc0-dc16-45b3-86dc-8a17531d6e83" name="Changes" comment="[HMS-007]: adding correlation id generation logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/controller/HotelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/controller/HotelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/controller/PackageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/controller/PackageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/controller/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/src/main/java/com/example/Hotel/controller/RoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/controller/ReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/controller/ReservationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/example/User/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/java/com/example/User/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/example/User/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/java/com/example/User/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/java/com/example/gatewayserver/filters/ResponseTimeFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/example/gatewayserver/filters/ResponseTimeFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/service/client/HotelFeingClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/service/client/HotelFeingClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +237,7 @@
       <workItem from="1762517846075" duration="5137000" />
       <workItem from="1762757931293" duration="279000" />
       <workItem from="1762758223688" duration="4485000" />
-      <workItem from="1762767479581" duration="8642000" />
+      <workItem from="1762767479581" duration="9917000" />
     </task>
     <task id="LOCAL-00001" summary="[HMS-006]: Eureka Server initial setup">
       <option name="closed" value="true" />
@@ -304,7 +295,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762787750976</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="[HMS-007]: adding correlation id generation logic">
+      <option name="closed" value="true" />
+      <created>1762789757085</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1762789757085</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,7 +317,8 @@
     <MESSAGE value="[HMS-007]: Implementatiion of the spring cloud gateway server." />
     <MESSAGE value="[HMS-007]: Changing to access lowercase service names" />
     <MESSAGE value="[HMS-007]: adding custom routes and response filter" />
-    <option name="LAST_COMMIT_MESSAGE" value="[HMS-007]: adding custom routes and response filter" />
+    <MESSAGE value="[HMS-007]: adding correlation id generation logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="[HMS-007]: adding correlation id generation logic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -350,7 +350,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/service/client/HotelFeingClient.java</url>
-          <line>17</line>
+          <line>18</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
