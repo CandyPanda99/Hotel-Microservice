@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eurekaserver" />
+        <module name="gatewayserver" />
         <module name="configserver" />
       </profile>
       <profile name="Annotation profile for User" enabled="true">
@@ -31,6 +32,7 @@
       <module name="Reservation" options="-parameters" />
       <module name="configserver" options="-parameters" />
       <module name="eurekaserver" options="-parameters" />
+      <module name="gatewayserver" options="-parameters" />
       <module name="hotel" options="-parameters" />
       <module name="reservation" options="-parameters" />
       <module name="user" options="-parameters" />

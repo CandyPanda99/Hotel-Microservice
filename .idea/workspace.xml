@@ -4,8 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1bc4cc0-dc16-45b3-86dc-8a17531d6e83" name="Changes" comment="[HMS-006]: Eureka Server Implementation, writting the cron job to update room availabilities">
+    <list default="true" id="d1bc4cc0-dc16-45b3-86dc-8a17531d6e83" name="Changes" comment="[HMS-007]: Project setup of the gatewayserver">
+      <change afterPath="$PROJECT_DIR$/configs/gatewayserver.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eurekaserver/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gatewayserver/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eurekaserver/src/test/java/com/example/eurekaserver/EurekaserverApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/src/test/java/com/example/gatewayserver/GatewayserverApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,55 +66,67 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;HTTP Request.EurekaserverApplication | #1.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.RequestCollection | Decrypt a secret.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.RequestCollection | Encrypt a secret.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.RequestCollection | GET request to example server.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.RequestCollection | Get config for reservation-service.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.RequestCollection | Get config for user-service.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.RequestCollection | Get default configs for user-service.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.RequestCollection | Get dev config for hotel-service.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.RequestCollection | Get dev configs for user-service.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.RequestCollection | Get eureka server.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.RequestCollection | Refresh user-service actuator.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.hotel [compile].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ConfigserverApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.EurekaserverApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.HotelApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ReservationApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.UserApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/api-gateway-implementation&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/lasalhettiarachchi/IdeaProjects/Hotel Microservice/eurekaserver&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "HTTP Request.EurekaserverApplication | #1.executor": "Run",
+    "HTTP Request.RequestCollection | Decrypt a secret.executor": "Run",
+    "HTTP Request.RequestCollection | Encrypt a secret.executor": "Run",
+    "HTTP Request.RequestCollection | GET request to example server.executor": "Run",
+    "HTTP Request.RequestCollection | Get config for reservation-service.executor": "Run",
+    "HTTP Request.RequestCollection | Get config for user-service.executor": "Run",
+    "HTTP Request.RequestCollection | Get default configs for user-service.executor": "Run",
+    "HTTP Request.RequestCollection | Get dev config for hotel-service.executor": "Run",
+    "HTTP Request.RequestCollection | Get dev configs for user-service.executor": "Run",
+    "HTTP Request.RequestCollection | Get eureka server.executor": "Run",
+    "HTTP Request.RequestCollection | Refresh user-service actuator.executor": "Run",
+    "Maven.eurekaserver [clean].executor": "Run",
+    "Maven.eurekaserver [compile].executor": "Run",
+    "Maven.eurekaserver [install].executor": "Run",
+    "Maven.eurekaserver [package].executor": "Run",
+    "Maven.gatewayserver [clean].executor": "Run",
+    "Maven.gatewayserver [install].executor": "Run",
+    "Maven.gatewayserver [package].executor": "Run",
+    "Maven.gatewayserver [verify].executor": "Run",
+    "Maven.hotel [compile].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ConfigserverApplication.executor": "Run",
+    "Spring Boot.EurekaserverApplication.executor": "Run",
+    "Spring Boot.GatewayserverApplication.executor": "Run",
+    "Spring Boot.HotelApplication.executor": "Run",
+    "Spring Boot.ReservationApplication.executor": "Run",
+    "Spring Boot.UserApplication.executor": "Run",
+    "git-widget-placeholder": "feature/api-gateway-implementation",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/lasalhettiarachchi/IdeaProjects/Hotel Microservice/configs",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/configs" />
+      <recent name="$PROJECT_DIR$/gatewayserver" />
       <recent name="$PROJECT_DIR$/eurekaserver" />
       <recent name="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation" />
       <recent name="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/dto" />
-      <recent name="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/enums" />
-      <recent name="$PROJECT_DIR$/configs" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.Reservation.dto" />
@@ -122,20 +144,20 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ReservationApplication">
+  <component name="RunManager" selected="Spring Boot.GatewayserverApplication">
     <configuration name="RequestCollection | Decrypt a secret" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/configserver/RequestCollection.http" executionIdentifier="Decrypt a secret" index="5" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="RequestCollection | Encrypt a secret" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/configserver/RequestCollection.http" executionIdentifier="Encrypt a secret" index="4" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="RequestCollection | Get config for reservation-service" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/configserver/RequestCollection.http" executionIdentifier="Get config for reservation-service" index="3" runType="Run single request">
+    <configuration name="RequestCollection | Get all hotels via the gateway server" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gatewayserver/RequestCollection.http" executionIdentifier="Get all hotels via the gateway server" index="2" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="RequestCollection | Get eureka server" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/eurekaserver/RequestCollection.http" executionIdentifier="Get eureka server" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="RequestCollection | Refresh user-service actuator" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/configserver/RequestCollection.http" executionIdentifier="Refresh user-service actuator" index="6" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="RequestCollection | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gatewayserver/RequestCollection.http" executionIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="ConfigserverApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -148,6 +170,14 @@
     <configuration name="EurekaserverApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="eurekaserver" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.eurekaserver.EurekaserverApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayserverApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="gatewayserver" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.gatewayserver.GatewayserverApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -175,11 +205,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.RequestCollection | Get all hotels via the gateway server" />
+        <item itemvalue="HTTP Request.RequestCollection | #1" />
         <item itemvalue="HTTP Request.RequestCollection | Get eureka server" />
         <item itemvalue="HTTP Request.RequestCollection | Refresh user-service actuator" />
         <item itemvalue="HTTP Request.RequestCollection | Decrypt a secret" />
-        <item itemvalue="HTTP Request.RequestCollection | Encrypt a secret" />
-        <item itemvalue="HTTP Request.RequestCollection | Get config for reservation-service" />
       </list>
     </recent_temporary>
   </component>
@@ -211,6 +241,8 @@
       <workItem from="1762448002860" duration="5884000" />
       <workItem from="1762517846075" duration="5137000" />
       <workItem from="1762757931293" duration="279000" />
+      <workItem from="1762758223688" duration="4485000" />
+      <workItem from="1762767479581" duration="3852000" />
     </task>
     <task id="LOCAL-00001" summary="[HMS-006]: Eureka Server initial setup">
       <option name="closed" value="true" />
@@ -236,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762309064583</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="[HMS-007]: Project setup of the gatewayserver">
+      <option name="closed" value="true" />
+      <created>1762758535250</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1762758535250</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +286,8 @@
     <MESSAGE value="[HMS-005]: Reservation MS initial commit" />
     <MESSAGE value="[HMS-006]: Eureka Server initial setup" />
     <MESSAGE value="[HMS-006]: Eureka Server Implementation, writting the cron job to update room availabilities" />
-    <option name="LAST_COMMIT_MESSAGE" value="[HMS-006]: Eureka Server Implementation, writting the cron job to update room availabilities" />
+    <MESSAGE value="[HMS-007]: Project setup of the gatewayserver" />
+    <option name="LAST_COMMIT_MESSAGE" value="[HMS-007]: Project setup of the gatewayserver" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
