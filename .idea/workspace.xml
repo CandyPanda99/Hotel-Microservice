@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d1bc4cc0-dc16-45b3-86dc-8a17531d6e83" name="Changes" comment="[HMS-007]: adding correlation id generation logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/service/client/HotelFeingClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reservation/src/main/java/com/example/Reservation/service/client/HotelFeingClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/RequestCollection.http" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/RequestCollection.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/java/com/example/gatewayserver/GatewayserverApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/example/gatewayserver/GatewayserverApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/eureka-server-implementation" />
+        <entry key="$PROJECT_DIR$" value="feature/api-gateway-implementation" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,12 +64,17 @@
   "keyToString": {
     "HTTP Request.EurekaserverApplication | #1.executor": "Run",
     "HTTP Request.RequestCollection | #1.executor": "Run",
+    "HTTP Request.RequestCollection | All routes.executor": "Run",
     "HTTP Request.RequestCollection | Decrypt a secret.executor": "Run",
     "HTTP Request.RequestCollection | Encrypt a secret.executor": "Run",
     "HTTP Request.RequestCollection | GET request to example server.executor": "Run",
+    "HTTP Request.RequestCollection | Get all circuit breakers status.executor": "Run",
+    "HTTP Request.RequestCollection | Get all hotels via the gateway server#1.executor": "Run",
+    "HTTP Request.RequestCollection | Get all hotels via the gateway server#2.executor": "Run",
     "HTTP Request.RequestCollection | Get all hotels via the gateway server(CAPS).executor": "Run",
     "HTTP Request.RequestCollection | Get all hotels via the gateway server(SIMPLE).executor": "Run",
     "HTTP Request.RequestCollection | Get all hotels via the gateway server.executor": "Run",
+    "HTTP Request.RequestCollection | Get all users via the gateway server.executor": "Run",
     "HTTP Request.RequestCollection | Get config for reservation-service.executor": "Run",
     "HTTP Request.RequestCollection | Get config for user-service.executor": "Run",
     "HTTP Request.RequestCollection | Get default configs for user-service.executor": "Run",
@@ -96,7 +104,7 @@
     "Spring Boot.HotelApplication.executor": "Run",
     "Spring Boot.ReservationApplication.executor": "Run",
     "Spring Boot.UserApplication.executor": "Run",
-    "git-widget-placeholder": "feature/api-gateway-implementation",
+    "git-widget-placeholder": "feature/resiliency",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/lasalhettiarachchi/IdeaProjects/Hotel Microservice/configs",
     "node.js.detected.package.eslint": "true",
@@ -140,19 +148,19 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.GatewayserverApplication">
-    <configuration name="RequestCollection | Get all hotels via the gateway server" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gatewayserver/RequestCollection.http" executionIdentifier="Get all hotels via the gateway server" index="2" runType="Run single request">
+    <configuration name="RequestCollection | All routes" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gatewayserver/RequestCollection.http" executionIdentifier="All routes" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="RequestCollection | Get all hotels via the gateway server(CAPS)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gatewayserver/RequestCollection.http" executionIdentifier="Get all hotels via the gateway server(CAPS)" index="2" runType="Run single request">
+    <configuration name="RequestCollection | Get all circuit breakers status" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gatewayserver/RequestCollection.http" executionIdentifier="Get all circuit breakers status" index="3" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="RequestCollection | Get all hotels via the gateway server(SIMPLE)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gatewayserver/RequestCollection.http" executionIdentifier="Get all hotels via the gateway server(SIMPLE)" index="3" runType="Run single request">
+    <configuration name="RequestCollection | Get all hotels via the gateway server#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gatewayserver/RequestCollection.http" executionIdentifier="Get all hotels via the gateway server#1" index="2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="RequestCollection | Get all users via the gateway server" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gatewayserver/RequestCollection.http" executionIdentifier="Get all users via the gateway server" index="3" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="RequestCollection | Get eureka server" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/eurekaserver/RequestCollection.http" executionIdentifier="Get eureka server" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="RequestCollection | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gatewayserver/RequestCollection.http" executionIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="ConfigserverApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -200,11 +208,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.RequestCollection | Get all hotels via the gateway server" />
-        <item itemvalue="HTTP Request.RequestCollection | Get all hotels via the gateway server(SIMPLE)" />
-        <item itemvalue="HTTP Request.RequestCollection | Get all hotels via the gateway server(CAPS)" />
-        <item itemvalue="HTTP Request.RequestCollection | #1" />
+        <item itemvalue="HTTP Request.RequestCollection | Get all hotels via the gateway server#1" />
+        <item itemvalue="HTTP Request.RequestCollection | Get all users via the gateway server" />
+        <item itemvalue="HTTP Request.RequestCollection | All routes" />
         <item itemvalue="HTTP Request.RequestCollection | Get eureka server" />
+        <item itemvalue="HTTP Request.RequestCollection | Get all circuit breakers status" />
       </list>
     </recent_temporary>
   </component>
@@ -237,7 +245,8 @@
       <workItem from="1762517846075" duration="5137000" />
       <workItem from="1762757931293" duration="279000" />
       <workItem from="1762758223688" duration="4485000" />
-      <workItem from="1762767479581" duration="9917000" />
+      <workItem from="1762767479581" duration="12067000" />
+      <workItem from="1762805681182" duration="4024000" />
     </task>
     <task id="LOCAL-00001" summary="[HMS-006]: Eureka Server initial setup">
       <option name="closed" value="true" />
@@ -303,11 +312,30 @@
       <option name="project" value="LOCAL" />
       <updated>1762789757085</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="[HMS-007]: adding correlation id generation logic">
+      <option name="closed" value="true" />
+      <created>1762796137915</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1762796137915</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[HMS-005]: Reservation MS initial commit" />

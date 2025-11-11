@@ -22,3 +22,23 @@ management:
         enabled: true
     gateway:
       access: read-only
+
+resilience4j:
+  timelimiter:
+    configs:
+      default:
+        timeout-duration: 10000ms
+  circuitbreaker:
+    instances:
+      hotelCircuitBreaker:
+        registerHealthIndicator: true
+      reservationCircuitBreaker:
+        registerHealthIndicator: true
+      userCircuitBreaker:
+        registerHealthIndicator: true
+    configs:
+      default:
+        sliding-window-size: 10
+        permitted-number-of-calls-in-half-open-state: 2
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s
